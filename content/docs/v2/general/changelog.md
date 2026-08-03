@@ -2,6 +2,16 @@
 title: LinkAce v2 Changelog
 ---
 
+## 2.6.1
+
+_Released at 2026-08-03_
+
+- Fixed a server-side request forgery (SSRF) issue where private/internal IP addresses could still be reached during metadata fetching due to inconsistent DNS resolution between the validator and the HTTP client.
+- Fixed a CSV formula injection vulnerability in the bookmark export feature that could allow malicious spreadsheet formulas embedded in a link's title or description to execute when the exported file was opened.
+- Fixed a stored XSS vulnerability where javascript: URLs could bypass URL validation during bookmark import and execute when a user clicked the imported link.
+- Fixed a stored XSS vulnerability in Markdown-rendered links that could be used to trick an administrator into creating and leaking a privileged system API token.
+- Fixed an information disclosure issue where HTML bookmark exports could reveal the names of private tags belonging to other users.
+
 ## 2.6.0
 
 _Released at 2026-07-03_
